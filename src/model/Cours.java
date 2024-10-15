@@ -1,55 +1,39 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Cours {
-    private String codeCours;
-    private String nomCours;
-    private String professeur;
-    private List<Etudiant> etudiantsInscrits;
+    private String id;           // Identifiant du cours
+    private String nom;          // Nom du cours
+    private String description;   // Description du cours
 
-    public Cours(String codeCours, String nomCours, String professeur) {
-        this.codeCours = codeCours;
-        this.nomCours = nomCours;
-        this.professeur = professeur;
-        this.etudiantsInscrits = new ArrayList<>();
+    // Constructeur
+    public Cours(String id, String nom, String description) {
+        this.id = id;
+        this.nom = nom;
+        this.description = description;
     }
 
     // Getters et setters
-    public String getCodeCours() {
-        return codeCours;
+    public String getId() {
+        return id; // Retourne l'ID du cours
     }
 
-    public void setCodeCours(String codeCours) {
-        this.codeCours = codeCours;
+    public void setId(String id) {
+        this.id = id; // Met à jour l'ID du cours
     }
 
-    public String getNomCours() {
-        return nomCours;
+    public String getNom() {
+        return nom; // Retourne le nom du cours
     }
 
-    public void setNomCours(String nomCours) {
-        this.nomCours = nomCours;
+    public void setNom(String nom) {
+        this.nom = nom; // Met à jour le nom du cours
     }
 
-    public String getProfesseur() {
-        return professeur;
+    public String getDescription() {
+        return description; // Retourne la description du cours
     }
 
-    public void setProfesseur(String professeur) {
-        this.professeur = professeur;
-    }
-
-    public List<Etudiant> getEtudiantsInscrits() {
-        return etudiantsInscrits;
-    }
-
-    public void inscrireEtudiant(Etudiant etudiant) {
-        etudiantsInscrits.add(etudiant);
-    }
-
-    public void desinscrireEtudiant(Etudiant etudiant) {
-        etudiantsInscrits.remove(etudiant);
+    public void setDescription(String description) {
+        this.description = description; // Met à jour la description du cours
     }
 }
