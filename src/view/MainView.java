@@ -3,11 +3,10 @@ package view;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 import controller.EtudiantController; // Votre contrôleur pour les étudiants
 import model.Etudiant; // Votre classe modèle pour les étudiants
+import controller.ResultatController; // Votre contrôleur pour les résultats
 
 public class MainView extends JFrame {
     private JTable table;
@@ -41,11 +40,18 @@ public class MainView extends JFrame {
             coursView.setVisible(true); // Affichez la vue des cours
         });
 
+        JButton resultatButton = new JButton("Gérer les Résultats"); // Bouton pour gérer les résultats
+        resultatButton.addActionListener(e -> {
+            ResultatView resultatView = new ResultatView(new ResultatController());
+            resultatView.setVisible(true); // Affichez la vue des résultats
+        });
+
         // Ajouter les boutons au panneau
         buttonPanel.add(btnAjouter);
         buttonPanel.add(btnModifier);
         buttonPanel.add(btnSupprimer);
         buttonPanel.add(coursButton); // Ajoutez le bouton de gestion des cours
+        buttonPanel.add(resultatButton); // Ajoutez le bouton pour gérer les résultats
 
         getContentPane().add(buttonPanel, BorderLayout.NORTH);
 

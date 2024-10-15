@@ -1,55 +1,48 @@
 package model;
 
+import java.sql.Date;
+
 public class Resultat {
-    private Etudiant etudiant;
-    private Cours cours;
+    private String id;
+    private String idEtudiant;
+    private String idCours;
     private double note;
-    private String semestre;
-    private boolean valide;
+    private Date date;
 
-    public Resultat(Etudiant etudiant, Cours cours, double note, String semestre) {
-        this.etudiant = etudiant;
-        this.cours = cours;
+    public Resultat(String id, String idEtudiant, String idCours, double note, Date date) {
+        this.id = id;
+        this.idEtudiant = idEtudiant;
+        this.idCours = idCours;
         this.note = note;
-        this.semestre = semestre;
-        this.valide = note >= 10.0;
+        this.date = date;
     }
 
-    // Getters et setters
-    public Etudiant getEtudiant() {
-        return etudiant;
+    // Getters et Setters
+    public String getId() {
+        return id;
     }
 
-    public void setEtudiant(Etudiant etudiant) {
-        this.etudiant = etudiant;
+    public String getIdEtudiant() {
+        return idEtudiant;
     }
 
-    public Cours getCours() {
-        return cours;
-    }
-
-    public void setCours(Cours cours) {
-        this.cours = cours;
+    public String getIdCours() {
+        return idCours;
     }
 
     public double getNote() {
         return note;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
     public void setNote(double note) {
         this.note = note;
-        this.valide = note >= 10.0;
     }
 
-    public String getSemestre() {
-        return semestre;
-    }
-
-    public void setSemestre(String semestre) {
-        this.semestre = semestre;
-    }
-
-    public boolean isValide() {
-        return valide;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
